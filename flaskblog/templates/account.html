@@ -3,6 +3,7 @@
 {% block content%}
 <div class="content-section">
     <div class="media">
+        <!--Create route for image in models.py-->
       <img class="rounded-circle account-img" src="{{image_file}}">
       <div class="media-body">
         <h2 class="account-heading">{{current_user.username}}</h2>
@@ -10,7 +11,7 @@
       </div>
     </div>
     <!-- UPDATE INFORMATION FORM HERE -->
-   
+                                            <!--encoding data allows form to pass image data properly-->
         <form method="POST" action="" enctype="multipart/form-data"> 
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -42,6 +43,7 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!--add encoding type at top of form to allow data to pass-->
                 <div class="form-group">
                     {{ form.picture.label() }}
                     {{ form.picture(class="form-conrol-file") }}
